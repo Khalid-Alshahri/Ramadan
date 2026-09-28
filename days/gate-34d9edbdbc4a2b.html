@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>الإمام الشافعي - مواقف من التاريخ</title>
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../style.css?v=5" />
 
   <style>
     body {
@@ -13,39 +13,43 @@
         url("../assets/day.png") center / cover fixed no-repeat;
     }
 
-    /* تعديل خاص بهذه الصفحة */
     .character-file {
       position: relative;
       min-height: 100vh;
-      padding-bottom: 140px;
+      padding-bottom: 130px;
     }
 
-    .day-snap-wrap {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      left: auto;
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-end;
-      margin: 0;
-      z-index: 5;
-    }
-
-    .day-snap {
-      width: 95px;
-      height: 95px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .day-snap img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
+    /* هذا كلاس جديد مستقل للسناب */
+    #snap-fixed-right {
+      position: fixed !important;
+      right: 24px !important;
+      bottom: 24px !important;
+      left: auto !important;
+      top: auto !important;
+      width: 95px !important;
+      height: 95px !important;
+      z-index: 99999 !important;
+      border: 2px solid rgba(232, 183, 93, 0.95);
       border-radius: 14px;
+      background: transparent;
+      overflow: hidden;
+      direction: ltr;
+    }
+
+    #snap-fixed-right img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      #snap-fixed-right {
+        width: 78px !important;
+        height: 78px !important;
+        right: 16px !important;
+        bottom: 16px !important;
+      }
     }
   </style>
 </head>
@@ -67,13 +71,11 @@
           أثرهم حاضرًا في تاريخ الأمة.
         </p>
       </section>
-
-      <div class="day-snap-wrap">
-        <div class="day-snap">
-          <img src="../assets/snapcode.jpeg" alt="Snapcode" />
-        </div>
-      </div>
     </article>
   </main>
+
+  <div id="snap-fixed-right">
+    <img src="../assets/snapcode.jpeg" alt="Snapcode" />
+  </div>
 </body>
 </html>
