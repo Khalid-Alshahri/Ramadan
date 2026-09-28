@@ -12,6 +12,41 @@
         linear-gradient(rgba(3, 8, 18, 0.18), rgba(3, 8, 18, 0.32)),
         url("../assets/day.png") center / cover fixed no-repeat;
     }
+
+    /* تعديل خاص بهذه الصفحة */
+    .character-file {
+      position: relative;
+      min-height: 100vh;
+      padding-bottom: 140px;
+    }
+
+    .day-snap-wrap {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      left: auto;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin: 0;
+      z-index: 5;
+    }
+
+    .day-snap {
+      width: 95px;
+      height: 95px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .day-snap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 14px;
+    }
   </style>
 </head>
 <body>
