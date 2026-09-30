@@ -4,88 +4,181 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>أسد الدين شيركوه - مواقف من التاريخ</title>
-  <link rel="stylesheet" href="../style.css?v=8" />
+  <link rel="stylesheet" href="../style.css?v=9" />
 
   <style>
     body {
-      background-color: #05070d;
-      background-image:
-        linear-gradient(rgba(3, 8, 18, 0.18), rgba(3, 8, 18, 0.32)),
-        url("../assets/le.jpeg");
-      background-position: center, center top;
-      background-size: cover, contain;
-      background-repeat: no-repeat, no-repeat;
-      background-attachment: fixed, fixed;
+      margin: 0;
+      background: #05070d;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    .character-file {
-      position: relative;
+    .day-page {
+      width: 100%;
       min-height: 100vh;
-      padding-bottom: 140px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 18px 0 40px;
+      box-sizing: border-box;
     }
 
-    #snap-fixed-right {
-      position: fixed !important;
-      right: 24px !important;
-      bottom: 24px !important;
-      left: auto !important;
-      top: auto !important;
-      width: 95px !important;
-      height: 95px !important;
-      z-index: 99999 !important;
-      border: 2px solid rgba(232, 183, 93, 0.95);
-      border-radius: 14px;
-      background: transparent;
+    .story-image-page {
+      position: relative;
+      width: min(100%, 560px);
+      aspect-ratio: 9 / 16;
+      background: url("../assets/le.jpeg") center top / 100% 100% no-repeat;
       overflow: hidden;
     }
 
-    #snap-fixed-right img {
-      width: 100% !important;
-      height: 100% !important;
+    .back-link {
+      position: absolute;
+      top: 34px;
+      right: 58px;
+      z-index: 5;
+      color: #fff7dc;
+      text-decoration: none;
+      font-size: 15px;
+      padding: 10px 22px;
+      border: 1px solid rgba(232, 183, 93, 0.75);
+      border-radius: 18px;
+      background: rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(4px);
+    }
+
+    .character-title {
+      position: absolute;
+      top: 222px;
+      right: 0;
+      left: 0;
+      z-index: 4;
+      text-align: center;
+      color: #fff7dc;
+      font-size: 24px;
+      font-weight: 800;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+      margin: 0;
+    }
+
+    .bio-text {
+      position: absolute;
+      top: 310px;
+      right: 88px;
+      left: 88px;
+      z-index: 4;
+      color: #2b2116;
+      font-size: 14px;
+      line-height: 2;
+      text-align: center;
+      font-weight: 600;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+
+    .bio-text p {
+      margin: 0;
+    }
+
+    .snap-fixed-right {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      width: 78px;
+      height: 78px;
+      z-index: 9999;
+      border: 2px solid rgba(232, 183, 93, 0.95);
+      border-radius: 14px;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .snap-fixed-right img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       display: block;
     }
 
     @media (max-width: 640px) {
-      body {
-        background-attachment: scroll, scroll;
+      .day-page {
+        padding: 0 0 30px;
       }
 
-      #snap-fixed-right {
-        width: 78px !important;
-        height: 78px !important;
-        right: 16px !important;
-        bottom: 16px !important;
+      .story-image-page {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .back-link {
+        top: 30px;
+        right: 56px;
+        font-size: 13px;
+        padding: 8px 18px;
+      }
+
+      .character-title {
+        top: 205px;
+        font-size: 21px;
+      }
+
+      .bio-text {
+        top: 292px;
+        right: 72px;
+        left: 72px;
+        font-size: 12.4px;
+        line-height: 1.9;
+      }
+
+      .snap-fixed-right {
+        width: 68px;
+        height: 68px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .character-title {
+        top: 198px;
+        font-size: 19px;
+      }
+
+      .bio-text {
+        top: 280px;
+        right: 64px;
+        left: 64px;
+        font-size: 11.7px;
+        line-height: 1.85;
       }
     }
   </style>
 </head>
+
 <body>
-  <div class="page-glow"></div>
-
   <main class="day-page">
-    <a class="back-link" href="../index.html?showGates=1">العودة إلى الأبواب</a>
+    <section class="story-image-page">
 
-    <article class="character-file">
-      <h1>القائد: أسد الدين شيركوه</h1>
+      <a class="back-link" href="../index.html?showGates=1">العودة إلى الأبواب</a>
 
-      <section class="bio-box">
+      <h1 class="character-title">القائد: أسد الدين شيركوه</h1>
+
+      <div class="bio-text">
         <p>
-          أبو الحارث أسد الدين شيركوه بن شاذي بن مروان، قائد عسكري شهير وعمّ صلاح الدين الأيوبي.
+          أبو الحارث أسد الدين شيركوه بن شاذي بن مروان،
+          قائد عسكري شهير وعمّ صلاح الدين الأيوبي.
           <br><br>
-          وهو الذي أسقط الدولة الفاطمية الشيعية، وكانت له جهود عظيمة في تأسيس الدولة الأيوبية،
+          وهو الذي أسقط الدولة الفاطمية الشيعية،
+          وكانت له جهود عظيمة في تأسيس الدولة الأيوبية،
           وفي تمهيد الطريق لتحرير القدس من الصليبيين وطردهم من بلاد الشام.
           <br><br>
-          حاصره الصليبيون في بلبيس وهو في ألف فارس فقط، فما جسر الصليبيون على اقتحام المدينة
-          خوفًا وفَرَقًا منه.
+          حاصره الصليبيون في بلبيس وهو في ألف فارس فقط،
+          فما جسر الصليبيون على اقتحام المدينة خوفًا وفَرَقًا منه.
           <br><br>
           وتوفي على فراشه بعد أن خاض أكثر من مائة معركة.
         </p>
-      </section>
-    </article>
+      </div>
+
+    </section>
   </main>
 
-  <div id="snap-fixed-right">
+  <div class="snap-fixed-right">
     <img src="../assets/snapcode.jpeg" alt="Snapcode" />
   </div>
 </body>
