@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>جرير - مواقف من التاريخ</title>
+  <title>الشاعر: جرير - مواقف من التاريخ</title>
   <link rel="stylesheet" href="../style.css?v=8" />
 
   <style>
     body {
-      background:
+      background-color: #05070d;
+      background-image:
         linear-gradient(rgba(3, 8, 18, 0.18), rgba(3, 8, 18, 0.32)),
-        url("../assets/sc.jpeg") center / cover fixed no-repeat;
+        url("../assets/sc.jpeg");
+      background-position: center, center top;
+      background-size: cover, contain;
+      background-repeat: no-repeat, no-repeat;
+      background-attachment: fixed, fixed;
     }
 
     .character-file {
@@ -42,6 +47,10 @@
     }
 
     @media (max-width: 640px) {
+      body {
+        background-attachment: scroll, scroll;
+      }
+
       #snap-fixed-right {
         width: 78px !important;
         height: 78px !important;
@@ -58,7 +67,7 @@
     <a class="back-link" href="../index.html?showGates=1">العودة إلى الأبواب</a>
 
     <article class="character-file">
-      <h1>الشاعر:جرير</h1>
+      <h1>الشاعر: جرير</h1>
 
       <section class="bio-box">
         <p>
