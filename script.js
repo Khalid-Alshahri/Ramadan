@@ -12,13 +12,21 @@ function getRamadanDay(startDateString) {
   return Math.max(0, Math.min(30, diffDays + 1));
 }
 
-function showLockedMessage(day, reason) {
+function showLockedMessage(day, reason, title) {
   const modal = document.getElementById("locked-modal");
   const message = document.getElementById("locked-message");
+  const modalTitle = modal ? modal.querySelector("h2") : null;
 
   if (!modal || !message) return;
 
-  message.textContent = reason || `باب ${day} لم يُفتح بعد.`;
+  if (modalTitle) {
+    modalTitle.textContent = title || "الباب لم يُفتح بعد";
+  }
+
+  message.textContent =
+    reason ||
+    "سيُفتح هذا الباب في وقته المحدد من رمضان، ترقّب موقفًا جديدًا من التاريخ يحمل عبرة وأثرًا.";
+
   modal.hidden = false;
 }
 
@@ -28,18 +36,24 @@ function buildGates() {
 
   if (!grid) return;
 
-  const config = window.RAMADAN_CONFIG || {};
   const links = window.DOOR_LINKS || {};
-  const currentDay = getRamadanDay(config.ramadanStartDate || "2026-08-29");
+
+  /*
+    فتح يدوي:
+    الآن مفتوح: 1 و 2 و 3 فقط.
+    إذا أردت فتح الباب الرابع لاحقًا اجعلها:
+    const manualOpenDays = [1, 2, 3, 4];
+  */
+  const manualOpenDays = [1, 2, 3];
 
   if (label) {
-    label.textContent = currentDay === 0 ? "لم يبدأ بعد" : `اليوم ${currentDay}`;
+    label.textContent = `الأبواب المفتوحة: ${manualOpenDays.join("، ")}`;
   }
 
   grid.innerHTML = "";
 
   for (let day = 1; day <= 30; day++) {
-    const isAllowedByDate = day <= currentDay;
+    const isAllowedByDate = manualOpenDays.includes(day);
     const hasPage = Boolean(links[String(day)]);
     const isOpen = isAllowedByDate && hasPage;
 
@@ -63,9 +77,17 @@ function buildGates() {
       }
 
       if (!isAllowedByDate) {
-        showLockedMessage(day, `هذا الباب يفتح في اليوم ${day}.`);
+        showLockedMessage(
+          day,
+          "سيُفتح هذا الباب في وقته المحدد من رمضان، ترقّب موقفًا جديدًا من التاريخ يحمل عبرة وأثرًا.",
+          "الباب لم يُفتح بعد"
+        );
       } else {
-        showLockedMessage(day, "موعد هذا الباب وصل، لكن ملفه لم يُرفع بعد.");
+        showLockedMessage(
+          day,
+          "وصل موعد هذا الباب، وسيتم رفع محتواه قريبًا بإذن الله.",
+          "المحتوى قيد التجهيز"
+        );
       }
     });
 
