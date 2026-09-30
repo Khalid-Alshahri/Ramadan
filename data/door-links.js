@@ -5,5 +5,7 @@ window.RAMADAN_CONFIG = {
 };
 
 window.DOOR_LINKS = {
-  "1": "days/gate-34d9edbdbc4a2b.html"
+  "1": "days/sc1.html",
+  "2": "days/ki2.html",
+  "3": "days/le3.html"
 };
