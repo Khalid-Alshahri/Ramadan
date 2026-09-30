@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>مواقف من التاريخ</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=8" />
 </head>
 <body class="intro-mode">
   <div class="page-glow"></div>
@@ -32,7 +32,6 @@
         <button class="start-button" id="start-button" type="button">ابدأ</button>
       </div>
 
-      <!-- باركود السناب في أقصى اليمين -->
       <div class="landing-snap">
         <img src="assets/snapcode.jpeg" alt="Snapcode" />
       </div>
@@ -46,7 +45,7 @@
         <p class="subtitle">كل يوم موقف، وكل موقف يحمل عبرة وأثرًا</p>
 
         <div class="status-card">
-          <span>اليوم المتاح حسب التاريخ:</span>
+          <span>الحالة:</span>
           <strong id="current-day-label">...</strong>
         </div>
       </div>
@@ -55,10 +54,9 @@
     <section id="gates" class="gates-grid" aria-label="أبواب مواقف من التاريخ"></section>
 
     <section id="about" class="about-card">
-      <h2>طريقة العمل</h2>
+      <h2>الفكرة</h2>
       <p>
-        الأبواب المفتوحة تقود إلى المواقف المتاحة فقط، أما الأبواب القادمة فتظهر مقفلة
-        حتى يحين موعد فتحها حسب التاريخ المحدد.
+        في كل يوم من رمضان يُفتح باب جديد يأخذك إلى موقف من التاريخ، وشخصية تركت أثرًا لا يُنسى.
       </p>
     </section>
 
@@ -74,13 +72,15 @@
     <div class="modal-box">
       <button class="modal-close" id="modal-close" aria-label="إغلاق">×</button>
       <h2>الباب لم يُفتح بعد</h2>
-      <p id="locked-message">انتظر موعد فتح هذا الباب.</p>
+      <p id="locked-message">
+        سيُفتح هذا الباب في وقته المحدد من رمضان، ترقّب موقفًا جديدًا من التاريخ يحمل عبرة وأثرًا.
+      </p>
     </div>
   </div>
 
   <footer>مواقف من التاريخ</footer>
 
-  <script src="data/door-links.js"></script>
-  <script src="script.js"></script>
+  <script src="data/door-links.js?v=8"></script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>
