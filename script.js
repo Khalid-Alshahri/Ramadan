@@ -44,7 +44,7 @@ function buildGates() {
     إذا أردت فتح الباب الرابع لاحقًا اجعلها:
     const manualOpenDays = [1, 2, 3, 4];
   */
-  const manualOpenDays = [1, 2, 3];
+  const manualOpenDays = [1, 2];
 
   if (label) {
     label.textContent = `الأبواب المفتوحة: ${manualOpenDays.join("، ")}`;
